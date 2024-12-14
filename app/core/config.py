@@ -10,7 +10,7 @@ class RunConfig(BaseModel):
     port: int = 8000
 
 class WeatherPrefix(BaseModel):
-    prefix: str = "/weather_app"
+    prefix: str = "/weather-app"
 
 class DatabaseConfig(BaseModel):
     url: PostgresDsn
