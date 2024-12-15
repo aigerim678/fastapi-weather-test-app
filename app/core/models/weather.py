@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import String, Float
+from sqlalchemy import TIMESTAMP, String, Float
 from sqlalchemy import DateTime
 from datetime import datetime, timezone
 
@@ -13,5 +13,5 @@ class Weather(Base):
     city: Mapped[str] = mapped_column(String)
     temperature: Mapped[float] = mapped_column(Float)
     description: Mapped[str] = mapped_column(String)
-    timestamp: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(timezone.utc), nullable=False)
+    timestamp: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), default=datetime.now(timezone.utc), nullable=False)
 

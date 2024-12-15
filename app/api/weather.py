@@ -7,7 +7,7 @@ from fastapi import (
 )
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import logging
 
 
@@ -31,7 +31,7 @@ from core.auth import (
 
 
 router = APIRouter(tags=["Weather"])
-
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 @router.get("", response_model=list[WeatherRead])
 async def get_weather(
@@ -124,8 +124,8 @@ async def get_weather_by_city(
     ],
 ):
     weather = await weather_crud.get_weather_by_city(session=session, city_name=city_name)
-    now = datetime.utcnow()
-    cache_duration = timedelta(minutes=1)  
+    now = datetime.now(timezone.utc)
+    cache_duration = timedelta(seconds=10)  
 
     if weather:
         # Проверяем, актуальны ли данные

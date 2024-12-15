@@ -20,7 +20,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated = "auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/weather/v1/weather/token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/weather-app/v1/weather/token")
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
