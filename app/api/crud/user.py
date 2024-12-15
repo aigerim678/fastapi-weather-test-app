@@ -5,9 +5,9 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import IntegrityError
 
 
-from core.models import User
-from core.schemas import UserCreate
-from core.auth import get_password_hash
+from app.core.models import User
+from app.core.schemas import UserCreate
+from app.core.auth import get_password_hash
 
 
 async def get_user_by_username(session: AsyncSession, username: str) -> Optional[User]:

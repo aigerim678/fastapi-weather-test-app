@@ -3,8 +3,8 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from core.models import Weather
-from core.schemas import WeatherCreate, WeatherUpdate
+from app.core.models import Weather
+from app.core.schemas import WeatherCreate, WeatherUpdate
 from datetime import datetime, timezone
 
 

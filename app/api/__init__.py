@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from core.config import settings
+from app.core.config import settings
 
 from .weather import router as weather_router
 from .user import router as user_router

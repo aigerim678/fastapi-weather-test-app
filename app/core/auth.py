@@ -8,9 +8,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
 
-from core.models import db_helper, User
-from core.schemas import TokenData
-from core.config import settings
+from app.core.models import db_helper, User
+from app.core.schemas import TokenData
+from app.core.config import settings
 
 
 SECRET_KEY = settings.secret_key

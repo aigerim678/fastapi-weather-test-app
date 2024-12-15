@@ -11,8 +11,8 @@ from datetime import datetime, timedelta, timezone
 import logging
 
 
-from core.models import User, db_helper
-from core.schemas import (
+from app.core.models import User, db_helper
+from app.core.schemas import (
     WeatherRead,
     WeatherCreate,
     WeatherUpdate,
@@ -20,7 +20,7 @@ from core.schemas import (
 )
 from .crud import weather as weather_crud
 from .services.weather import get_weather_from_api 
-from core.auth import (
+from app.core.auth import (
     authenticate_user,
     create_access_token,
     ACCESS_TOKEN_EXPIRE_MINUTES,

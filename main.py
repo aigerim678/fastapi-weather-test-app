@@ -5,9 +5,9 @@ from fastapi import FastAPI
 import uvicorn
 from fastapi.responses import ORJSONResponse
 
-from core.models import db_helper
-from core.config import settings
-from api import router
+from app.core.models import db_helper
+from app.core.config import settings
+from app.api import router
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)

@@ -9,8 +9,8 @@ from fastapi import (
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-from core.models import db_helper
-from core.schemas import UserCreate, UserRead
+from app.core.models import db_helper
+from app.core.schemas import UserCreate, UserRead
 from .crud import user as user_crud
 
 router = APIRouter(tags=["User"])

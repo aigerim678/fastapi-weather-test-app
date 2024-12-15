@@ -1,5 +1,5 @@
 import aiohttp  
-from core.config import settings
+from app.core.config import settings
 
 
 API_KEY = settings.openweather_api_key
