@@ -17,9 +17,6 @@ coverage.xml
 .idea/
 .vscode/
 
-# Environment variables
-.env
-
 # Database files
 *.db
 *.sqlite
