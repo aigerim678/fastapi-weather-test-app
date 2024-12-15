@@ -3,7 +3,7 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped, mapped_column
 
 
-from core.config import settings
+from app.core.config import settings
 
 
 
