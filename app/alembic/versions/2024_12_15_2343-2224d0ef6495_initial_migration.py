@@ -1,8 +1,8 @@
 """Initial migration
 
-Revision ID: 9fc286f4f467
+Revision ID: 2224d0ef6495
 Revises: 
-Create Date: 2024-12-14 17:18:24.426878
+Create Date: 2024-12-15 23:43:50.448999
 
 """
 
@@ -13,7 +13,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = "9fc286f4f467"
+revision: str = "2224d0ef6495"
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -27,6 +27,7 @@ def upgrade() -> None:
         sa.Column("email", sa.String(), nullable=True),
         sa.Column("full_name", sa.String(), nullable=True),
         sa.Column("disabled", sa.Boolean(), nullable=False),
+        sa.Column("hashed_password", sa.String(), nullable=False),
         sa.Column("id", sa.Integer(), nullable=False),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_users")),
         sa.UniqueConstraint("email", name=op.f("uq_users_email")),
@@ -37,7 +38,7 @@ def upgrade() -> None:
         sa.Column("city", sa.String(), nullable=False),
         sa.Column("temperature", sa.Float(), nullable=False),
         sa.Column("description", sa.String(), nullable=False),
-        sa.Column("timestamp", sa.DateTime(), nullable=False),
+        sa.Column("timestamp", sa.TIMESTAMP(timezone=True), nullable=False),
         sa.Column("id", sa.Integer(), nullable=False),
         sa.PrimaryKeyConstraint("id", name=op.f("pk_weather_data")),
     )
